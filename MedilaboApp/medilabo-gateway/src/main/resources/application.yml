@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: medilabo-patient
+          uri: http://localhost:8081/
+          predicates:
+            - Path= /patients/**
